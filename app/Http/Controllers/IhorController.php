@@ -38,12 +38,14 @@ class IhorController extends Controller
 
     }
 
-    public function updateUser($id)
+    public function updateUser(Request $request)
     {
-        $user = Ihor::whereId($id);
+        $user = Ihor::find($request->id);
 
         $user->email = 'new@email.com';
 
         $user->save();
+
+        return 'Done! User with ID ' . $request->id . ' successfuly updated email to ' . $user->email;
     }
 }
