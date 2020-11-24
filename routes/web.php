@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IhorController;
+use App\Http\Controllers\CategorieController;
+use App\Models\Categorie;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,5 @@ Route::get('/users', [IhorController::class, 'getUsers']);
 Route::get('/add-users', [IhorController::class, 'addUser']);
 
 Route::get('/edit-user/{id}', [IhorController::class, 'updateUser']);
+
+Route::get('/categories', [CategorieController::class, 'getCategories']);
